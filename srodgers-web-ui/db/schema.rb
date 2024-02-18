@@ -10,9 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_18_134957) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_18_195122) do
   create_table "bets", force: :cascade do |t|
-    t.integer "id"
     t.text "event_id"
     t.text "market_id"
     t.text "runner_id"
@@ -20,6 +19,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_18_134957) do
     t.float "stake"
     t.text "status"
     t.text "offer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
