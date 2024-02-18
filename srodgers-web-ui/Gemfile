@@ -72,3 +72,7 @@ group :test do
 end
 
 gem 'whenever'
+gem 'chartkick'
+gem 'groupdate'
+gem 'sassc-rails'
+gem 'bootstrap'

@@ -1,12 +1,19 @@
-Total Bets Placed: <%= @bets.size %><br>
-Total Bets Won: <%= @bets.where(status: "WIN").size %><br>
-Total Bets Lost: <%= @bets.where(status: "LOSS").size %><br>
-Total Bets Pushed: <%= @bets.where(status: "PUSH").size %><br>
-Total Bets Open: <%= @bets.where(status: "OPEN").size %><br><br>
+<div class="row">
+  <div class="col-md-4 card mb-4">
+    Total Bets Placed: <%= @bets.size %><br>
+    Total Bets Won: <%= @bets.where(status: "WIN").size %><br>
+    Total Bets Lost: <%= @bets.where(status: "LOSS").size %><br>
+    Total Bets Pushed: <%= @bets.where(status: "PUSH").size %><br>
+    Total Bets Open: <%= @bets.where(status: "OPEN").size %><br><br>
 
-Current Success Rate: <%= (@bets.where(status: "WIN").size.to_f / @bets.where("status != 'OPEN' AND status != 'PUSH'").size.to_f) * 100 %>%<br>
+    Current Success Rate: <%= ((@bets.where(status: "WIN").size.to_f / @bets.where("status != 'OPEN' AND status != 'PUSH'").size.to_f) * 100).round(2) %>%<br>
 
-Current Profit/Loss: £<%= @profit_loss %><br>
-Current Account Balance: £<%= @account_balance %>
+    Current Profit/Loss: £<%= @profit_loss %><br>
+    Current Account Balance: £<%= @account_balance %><br><br>
 
-<%= button_to "Check Bets", check_bets_path %>
+    <%= button_to "Check Bets", check_bets_path, class: "btn btn-primary mb-2" %>
+  </div>
+  <div class="col-md-8">
+    <%= line_chart @bet_chart %>
+  </div>
+</div>
