@@ -1,0 +1,4 @@
+Bet Lost - <%= @bet.offer_id %>
+Stake: <%= @bet.stake %>
+Odds: <%= @bet.odds %>
+Liability: <%= @bet.odds.to_f * @bet.stake.to_f %> (lost)
