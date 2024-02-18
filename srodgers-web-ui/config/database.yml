@@ -22,10 +22,4 @@ test:
 
 production:
   <<: *default
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
-  database: srodgers-db
-  username: srodgers
-  password: v5Wkfos64H4eALr9oPwDKFtyYOv0WSuY
-  host: postgres://srodgers:v5Wkfos64H4eALr9oPwDKFtyYOv0WSuY@dpg-cn92p0a1hbls73de252g-a.frankfurt-postgres.render.com/srodgers
+  database: ../srodgers.db
