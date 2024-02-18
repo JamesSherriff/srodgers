@@ -1,0 +1,10 @@
+# Run a loop
+# Before loop starts run login method and store session token
+# Check time at start of loop. After 5 hours (timeout is 6) re-do login method and store new session token
+# If 5 minutes since last check has passed check latest horse racing events
+# If horse has high odds (50+?) and second best odds is a lost less we want to place a bet
+# Check account funding. Maximum bet should be set at 10p to start with, but we can play with this.
+# If account has enough funding then place bet.
+# Store bet ID / some other info to be able to keep track of bet.
+# Check previous bets and update profit / loss based on result
+# Store everything we've done in DB (profit / loss / bets placed)

@@ -1,0 +1,12 @@
+Total Bets Placed: <%= @bets.size %><br>
+Total Bets Won: <%= @bets.where(status: "WIN").size %><br>
+Total Bets Lost: <%= @bets.where(status: "LOSS").size %><br>
+Total Bets Pushed: <%= @bets.where(status: "PUSH").size %><br>
+Total Bets Open: <%= @bets.where(status: "OPEN").size %><br><br>
+
+Current Success Rate: <%= (@bets.where(status: "WIN").size.to_f / @bets.where("status != 'OPEN' AND status != 'PUSH'").size.to_f) * 100 %>%<br>
+
+Current Profit/Loss: £<%= @profit_loss %><br>
+Current Account Balance: £<%= @account_balance %>
+
+<%= button_to "Check Bets", check_bets_path %>
